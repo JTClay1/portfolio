@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import ContactBar from "./components/ContactBar";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
@@ -19,6 +20,7 @@ function App() {
       </main>
 
       <Footer />
+      <ContactBar />
     </div>
   );
 }
