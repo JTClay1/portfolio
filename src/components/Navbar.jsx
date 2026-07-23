@@ -1,35 +1,32 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <header className="site-header">
-      <nav className="navbar container" aria-label="Primary navigation">
-        <Link className="navbar__brand" to="/">
-          JC<span>.</span>
+    <header className="topbar">
+      <nav className="topbar__inner container" aria-label="Primary navigation">
+        <Link className="topbar__brand" to="/">
+          <span className="topbar__brand-icon" aria-hidden="true">
+            JC
+          </span>
+          Josh Clay
         </Link>
 
-        <div className="navbar__links">
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? "navbar__link navbar__link--active" : "navbar__link"
-            }
-            to="/"
-          >
-            Home
-          </NavLink>
-
-          <a className="navbar__link" href="/#projects">
-            Projects
-          </a>
-
+        <div className="topbar__links">
+          <a href="/#home">Home</a>
+          <a href="/#projects">Projects</a>
+          <a href="/#about">About</a>
           <a
-            className="navbar__link navbar__github"
             href="https://github.com/JTClay1"
             target="_blank"
             rel="noreferrer"
           >
             GitHub
           </a>
+        </div>
+
+        <div className="topbar__status">
+          <span aria-hidden="true" />
+          Available
         </div>
       </nav>
     </header>
