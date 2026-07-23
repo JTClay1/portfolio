@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+header,
+main,
+footer {
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav div {
+  display: flex;
+  gap: 1rem;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+article {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #d7dce1;
+}
+
+footer {
+  text-align: center;
+}
