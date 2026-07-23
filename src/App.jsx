@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 import HomePage from "./pages/HomePage";
-import ProjectPage from "./pages/ProjectPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
