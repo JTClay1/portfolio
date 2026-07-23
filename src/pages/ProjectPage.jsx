@@ -13,15 +13,16 @@ function ProjectPage() {
         <div className="detail-shell container">
           <RetroPanel title="Project Not Found">
             <div className="message-page">
+              <p className="message-page__code">404</p>
+
+              <h1>Project not found.</h1>
+
               <p>
-                The requested project could not be found in Josh's project
+                The requested project could not be found in Josh&apos;s project
                 directory.
               </p>
 
-              <Link
-                className="retro-button retro-button--primary"
-                to="/"
-              >
+              <Link className="retro-button retro-button--primary" to="/">
                 Return to Profile
               </Link>
             </div>
@@ -34,11 +35,11 @@ function ProjectPage() {
   return (
     <div className="retro-page">
       <div className="detail-shell container">
-        <div className="breadcrumbs">
-          <Link to="/">Josh's Profile</Link>
-          <span>/</span>
-          <span>{project.title}</span>
-        </div>
+        <nav className="breadcrumbs" aria-label="Breadcrumb">
+          <Link to="/">Josh&apos;s Profile</Link>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{project.title}</span>
+        </nav>
 
         <RetroPanel title={`${project.title} — Project Case Study`}>
           <article className="project-detail">
@@ -57,22 +58,46 @@ function ProjectPage() {
               </span>
             </div>
 
-            <p className="project-detail__summary">
-              {project.summary}
-            </p>
+            {project.image && (
+              <div className="project-detail__image-frame">
+                <img
+                  className="project-detail__image"
+                  src={project.image}
+                  alt={project.imageAlt}
+                />
+              </div>
+            )}
 
-            <h2>Technology Stack</h2>
+            <p className="project-detail__summary">{project.summary}</p>
 
-            <ul className="technology-tags">
-              {project.technologies.map((technology) => (
-                <li key={technology}>{technology}</li>
-              ))}
-            </ul>
+            <section className="project-detail__section">
+              <h2>Technology Stack</h2>
+
+              <ul
+                className="technology-tags"
+                aria-label={`${project.title} technologies`}
+              >
+                {project.technologies.map((technology) => (
+                  <li key={technology}>{technology}</li>
+                ))}
+              </ul>
+            </section>
 
             <div className="project-detail__actions">
-              {project.githubUrl && (
+              {project.liveUrl && (
                 <a
                   className="retro-button retro-button--primary"
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Launch Application
+                </a>
+              )}
+
+              {project.githubUrl && (
+                <a
+                  className="retro-button retro-button--secondary"
                   href={project.githubUrl}
                   target="_blank"
                   rel="noreferrer"
