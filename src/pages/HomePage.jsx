@@ -1,15 +1,26 @@
+import PageMeta from "../components/PageMeta";
 import ProfileSidebar from "../components/ProfileSidebar";
 import ProjectCard from "../components/ProjectCard";
 import RetroPanel from "../components/RetroPanel";
 import projects from "../data/projects";
 
+const resumeUrl =
+  "/resume/Josh-Clay-Software-Engineer-Resume.pdf";
+
 function HomePage() {
   return (
     <div className="retro-page" id="home">
+      <PageMeta
+        title="Josh Clay | Full-Stack Software Engineer"
+        description="Josh Clay is a full-stack software engineer building practical applications with React, JavaScript, Python, Flask, SQL, REST APIs, and AI integrations."
+      />
+
       <div className="retro-shell container">
         <section className="profile-heading">
           <div className="profile-heading__titlebar">
-            <span>Josh Clay&apos;s Developer Profile</span>
+            <span>
+              Josh Clay&apos;s Developer Profile
+            </span>
 
             <span
               className="profile-heading__window-controls"
@@ -21,7 +32,9 @@ function HomePage() {
 
           <div className="profile-heading__body">
             <div>
-              <p className="profile-heading__eyebrow">Current profile</p>
+              <p className="profile-heading__eyebrow">
+                Current profile
+              </p>
 
               <h1>Josh Clay</h1>
 
@@ -44,12 +57,24 @@ function HomePage() {
                 >
                   Visit GitHub
                 </a>
+
+                <a
+                  className="retro-button retro-button--secondary"
+                  href={resumeUrl}
+                  download
+                >
+                  Download Resume
+                </a>
               </div>
             </div>
 
             <div className="buddy-status">
               <div className="buddy-status__heading">
-                <span className="online-status__dot" aria-hidden="true" />
+                <span
+                  className="online-status__dot"
+                  aria-hidden="true"
+                />
+
                 Josh is online
               </div>
 
@@ -76,7 +101,10 @@ function HomePage() {
               title="Josh's Latest Status"
             >
               <div className="status-update">
-                <div className="status-update__avatar" aria-hidden="true">
+                <div
+                  className="status-update__avatar"
+                  aria-hidden="true"
+                >
                   JC
                 </div>
 
@@ -86,12 +114,17 @@ function HomePage() {
                     actual problems instead of another weather-app tutorial.
                   </p>
 
-                  <small>Updated recently · Phoenix, Arizona</small>
+                  <small>
+                    Updated recently · Phoenix, Arizona
+                  </small>
                 </div>
               </div>
             </RetroPanel>
 
-            <RetroPanel title="Featured Projects" id="projects">
+            <RetroPanel
+              title="Featured Projects"
+              id="projects"
+            >
               <div className="projects-list">
                 {projects.map((project, index) => (
                   <ProjectCard
@@ -103,7 +136,10 @@ function HomePage() {
               </div>
             </RetroPanel>
 
-            <RetroPanel title="About Josh" id="about">
+            <RetroPanel
+              title="About Josh"
+              id="about"
+            >
               <div className="about-copy">
                 <p>
                   I completed an intensive full-stack software engineering

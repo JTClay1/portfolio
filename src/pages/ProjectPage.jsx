@@ -1,19 +1,29 @@
 import { Link, useParams } from "react-router-dom";
+import PageMeta from "../components/PageMeta";
 import RetroPanel from "../components/RetroPanel";
 import projects from "../data/projects";
 
 function ProjectPage() {
   const { slug } = useParams();
 
-  const project = projects.find((item) => item.slug === slug);
+  const project = projects.find(
+    (item) => item.slug === slug,
+  );
 
   if (!project) {
     return (
       <div className="retro-page">
+        <PageMeta
+          title="Project Not Found | Josh Clay"
+          description="The requested project could not be found in Josh Clay's software engineering portfolio."
+        />
+
         <div className="detail-shell container">
           <RetroPanel title="Project Not Found">
             <div className="message-page">
-              <p className="message-page__code">404</p>
+              <p className="message-page__code">
+                404
+              </p>
 
               <h1>Project not found.</h1>
 
@@ -22,7 +32,10 @@ function ProjectPage() {
                 directory.
               </p>
 
-              <Link className="retro-button retro-button--primary" to="/">
+              <Link
+                className="retro-button retro-button--primary"
+                to="/"
+              >
                 Return to Profile
               </Link>
             </div>
@@ -34,14 +47,32 @@ function ProjectPage() {
 
   return (
     <div className="retro-page">
+      <PageMeta
+        title={`${project.title} Case Study | Josh Clay`}
+        description={project.summary}
+      />
+
       <div className="detail-shell container">
-        <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <Link to="/">Josh&apos;s Profile</Link>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">{project.title}</span>
+        <nav
+          className="breadcrumbs"
+          aria-label="Breadcrumb"
+        >
+          <Link to="/">
+            Josh&apos;s Profile
+          </Link>
+
+          <span aria-hidden="true">
+            /
+          </span>
+
+          <span aria-current="page">
+            {project.title}
+          </span>
         </nav>
 
-        <RetroPanel title={`${project.title} — Project Case Study`}>
+        <RetroPanel
+          title={`${project.title} — Project Case Study`}
+        >
           <article className="project-detail">
             <header className="project-detail__heading">
               <div>
@@ -68,7 +99,9 @@ function ProjectPage() {
               </div>
             )}
 
-            <p className="project-detail__summary">{project.summary}</p>
+            <p className="project-detail__summary">
+              {project.summary}
+            </p>
 
             <div className="project-detail__actions">
               {project.liveUrl && (
@@ -120,7 +153,9 @@ function ProjectPage() {
                   aria-label={`${project.title} technologies`}
                 >
                   {project.technologies.map((technology) => (
-                    <li key={technology}>{technology}</li>
+                    <li key={technology}>
+                      {technology}
+                    </li>
                   ))}
                 </ul>
               </section>
@@ -130,7 +165,9 @@ function ProjectPage() {
 
                 <ul className="case-study-list">
                   {project.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
+                    <li key={feature}>
+                      {feature}
+                    </li>
                   ))}
                 </ul>
               </section>
@@ -141,7 +178,10 @@ function ProjectPage() {
                 <ol className="architecture-list">
                   {project.architecture.map((item, index) => (
                     <li key={item}>
-                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <span>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
                       <p>{item}</p>
                     </li>
                   ))}
@@ -163,7 +203,9 @@ function ProjectPage() {
 
                 <ul className="case-study-list case-study-list--columns">
                   {project.improvements.map((improvement) => (
-                    <li key={improvement}>{improvement}</li>
+                    <li key={improvement}>
+                      {improvement}
+                    </li>
                   ))}
                 </ul>
               </section>
