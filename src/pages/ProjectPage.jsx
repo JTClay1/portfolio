@@ -43,7 +43,7 @@ function ProjectPage() {
 
         <RetroPanel title={`${project.title} — Project Case Study`}>
           <article className="project-detail">
-            <div className="project-detail__heading">
+            <header className="project-detail__heading">
               <div>
                 <p className="project-detail__type">
                   {project.type} · {project.year}
@@ -56,7 +56,7 @@ function ProjectPage() {
                 <span aria-hidden="true" />
                 {project.status}
               </span>
-            </div>
+            </header>
 
             {project.image && (
               <div className="project-detail__image-frame">
@@ -69,19 +69,6 @@ function ProjectPage() {
             )}
 
             <p className="project-detail__summary">{project.summary}</p>
-
-            <section className="project-detail__section">
-              <h2>Technology Stack</h2>
-
-              <ul
-                className="technology-tags"
-                aria-label={`${project.title} technologies`}
-              >
-                {project.technologies.map((technology) => (
-                  <li key={technology}>{technology}</li>
-                ))}
-              </ul>
-            </section>
 
             <div className="project-detail__actions">
               {project.liveUrl && (
@@ -111,6 +98,83 @@ function ProjectPage() {
                 to="/#projects"
               >
                 Return to Projects
+              </Link>
+            </div>
+
+            <div className="case-study-grid">
+              <section className="case-study-section case-study-section--wide">
+                <h2>Project Overview</h2>
+                <p>{project.overview}</p>
+              </section>
+
+              <section className="case-study-section">
+                <h2>The Problem</h2>
+                <p>{project.problem}</p>
+              </section>
+
+              <section className="case-study-section">
+                <h2>Technology Stack</h2>
+
+                <ul
+                  className="technology-tags"
+                  aria-label={`${project.title} technologies`}
+                >
+                  {project.technologies.map((technology) => (
+                    <li key={technology}>{technology}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="case-study-section">
+                <h2>Key Features</h2>
+
+                <ul className="case-study-list">
+                  {project.features.map((feature) => (
+                    <li key={feature}>{feature}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="case-study-section">
+                <h2>Application Architecture</h2>
+
+                <ol className="architecture-list">
+                  {project.architecture.map((item, index) => (
+                    <li key={item}>
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <p>{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+
+              <section className="case-study-section">
+                <h2>Engineering Challenge</h2>
+                <p>{project.challenge}</p>
+              </section>
+
+              <section className="case-study-section">
+                <h2>My Solution</h2>
+                <p>{project.solution}</p>
+              </section>
+
+              <section className="case-study-section case-study-section--wide">
+                <h2>Future Improvements</h2>
+
+                <ul className="case-study-list case-study-list--columns">
+                  {project.improvements.map((improvement) => (
+                    <li key={improvement}>{improvement}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            <div className="project-detail__footer-actions">
+              <Link
+                className="retro-button retro-button--primary"
+                to="/#projects"
+              >
+                Return to Featured Projects
               </Link>
             </div>
           </article>
