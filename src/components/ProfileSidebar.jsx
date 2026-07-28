@@ -1,6 +1,9 @@
 import heroImage from "../assets/hero.png";
 import RetroPanel from "./RetroPanel";
 
+const resumeUrl =
+  "/resume/Josh-Clay-Software-Engineer-Resume.pdf";
+
 function ProfileSidebar() {
   return (
     <div className="profile-sidebar">
@@ -15,10 +18,17 @@ function ProfileSidebar() {
           </div>
 
           <h3>Josh Clay</h3>
-          <p className="profile-card__handle">@JTClay1</p>
+
+          <p className="profile-card__handle">
+            @JTClay1
+          </p>
 
           <div className="online-status">
-            <span className="online-status__dot" aria-hidden="true" />
+            <span
+              className="online-status__dot"
+              aria-hidden="true"
+            />
+
             Online — Open to Work
           </div>
 
@@ -66,9 +76,25 @@ function ProfileSidebar() {
       </RetroPanel>
 
       <RetroPanel title="Quick Links">
-        <nav className="quick-links" aria-label="Profile links">
-          <a href="#projects">› Featured Projects</a>
-          <a href="#about">› About Me</a>
+        <nav
+          className="quick-links"
+          aria-label="Profile links"
+        >
+          <a href="#projects">
+            › Featured Projects
+          </a>
+
+          <a href="#about">
+            › About Me
+          </a>
+
+          <a
+            href={resumeUrl}
+            download
+          >
+            › Download Resume
+          </a>
+
           <a
             href="https://github.com/JTClay1"
             target="_blank"
