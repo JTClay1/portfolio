@@ -30,18 +30,21 @@ function updateCanonicalLink(url) {
 
 function PageMeta({ title, description }) {
   useEffect(() => {
-    const currentUrl = window.location.href;
+    const canonicalUrl =
+      `${window.location.origin}${window.location.pathname}`;
 
     document.title = title;
 
     updateMetaTag("name", "description", description);
+
     updateMetaTag("property", "og:title", title);
     updateMetaTag("property", "og:description", description);
-    updateMetaTag("property", "og:url", currentUrl);
+    updateMetaTag("property", "og:url", canonicalUrl);
+
     updateMetaTag("name", "twitter:title", title);
     updateMetaTag("name", "twitter:description", description);
 
-    updateCanonicalLink(currentUrl);
+    updateCanonicalLink(canonicalUrl);
   }, [title, description]);
 
   return null;
