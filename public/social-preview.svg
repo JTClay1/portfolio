@@ -1,0 +1,57 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="title description"
+>
+  <title id="title">Josh Clay — Full-Stack Software Engineer</title>
+  <desc id="description">
+    Social preview for Josh Clay's software engineering portfolio.
+  </desc>
+  <defs>
+    <linearGradient id="page" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eef4fb" />
+      <stop offset="100%" stop-color="#c9d8ea" />
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5b88c1" />
+      <stop offset="55%" stop-color="#315f9f" />
+      <stop offset="100%" stop-color="#294f86" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#page)" />
+  <rect x="70" y="65" width="1060" height="500" rx="12" fill="#ffffff" stroke="#8293a8" stroke-width="3" />
+  <path d="M82 65h1036a12 12 0 0 1 12 12v76H70V77a12 12 0 0 1 12-12z" fill="url(#bar)" />
+  <circle cx="1090" cy="109" r="9" fill="#b9d9ff" />
+  <text x="110" y="121" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">
+    Josh Clay's Developer Profile
+  </text>
+
+  <rect x="110" y="205" width="98" height="98" rx="10" fill="url(#bar)" />
+  <text x="159" y="268" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700" text-anchor="middle">
+    JC
+  </text>
+
+  <text x="245" y="248" fill="#17365f" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="700">
+    Josh Clay
+  </text>
+  <text x="248" y="302" fill="#315f9f" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">
+    Full-Stack Software Engineer
+  </text>
+  <text x="110" y="385" fill="#43556c" font-family="Arial, Helvetica, sans-serif" font-size="26">
+    React · JavaScript · Python · Flask · SQL · REST APIs · AI Integrations
+  </text>
+
+  <rect x="110" y="445" width="230" height="58" rx="5" fill="url(#bar)" stroke="#17365f" stroke-width="2" />
+  <text x="225" y="483" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" text-anchor="middle">
+    View Portfolio
+  </text>
+
+  <circle cx="905" cy="475" r="9" fill="#61be59" stroke="#2d752a" stroke-width="2" />
+  <text x="930" y="483" fill="#2e6a2c" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">
+    Open to Work
+  </text>
+</svg>
