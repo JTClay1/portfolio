@@ -592,6 +592,11 @@ main {
     0 1px 3px rgba(38, 54, 75, 0.24);
 }
 
+.project-card__image--build-n-buy {
+  object-fit: contain;
+  object-position: center;
+}
+
 .project-card__content {
   min-width: 0;
   padding: 1rem;
