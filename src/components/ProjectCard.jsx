@@ -5,7 +5,7 @@ function ProjectCard({ project, index }) {
     <article className="project-card">
       <div className="project-card__image-frame">
         <img
-          className="project-card__image"
+          className={`project-card__image project-card__image--${project.slug}`}
           src={project.image}
           alt={project.imageAlt}
         />
