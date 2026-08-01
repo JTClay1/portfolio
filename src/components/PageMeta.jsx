@@ -32,6 +32,8 @@ function PageMeta({ title, description }) {
   useEffect(() => {
     const canonicalUrl =
       `${window.location.origin}${window.location.pathname}`;
+    const socialImageUrl =
+      `${window.location.origin}/social-preview.svg`;
 
     document.title = title;
 
@@ -40,9 +42,11 @@ function PageMeta({ title, description }) {
     updateMetaTag("property", "og:title", title);
     updateMetaTag("property", "og:description", description);
     updateMetaTag("property", "og:url", canonicalUrl);
+    updateMetaTag("property", "og:image", socialImageUrl);
 
     updateMetaTag("name", "twitter:title", title);
     updateMetaTag("name", "twitter:description", description);
+    updateMetaTag("name", "twitter:image", socialImageUrl);
 
     updateCanonicalLink(canonicalUrl);
   }, [title, description]);
