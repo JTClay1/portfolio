@@ -10,7 +10,7 @@ const projects = [
     year: "2026",
     status: "Deployed",
     image: buildNBuyImage,
-    imageAlt: "Build n' Buy savings-goal dashboard",
+    imageAlt: "Build n' Buy logo with the save-first buying message",
     summary:
       "An AI-powered savings platform that helps users create purchasing goals, track contributions, compare alternatives, and make smarter buying decisions.",
     technologies: [
@@ -21,7 +21,7 @@ const projects = [
       "OpenAI API",
     ],
     githubUrl: "https://github.com/JTClay1/build-n-buy",
-    liveUrl: "",
+    liveUrl: "https://build-n-buy.vercel.app",
 
     overview:
       "Build n' Buy is a full-stack financial planning application designed to help users save toward specific purchases while making more informed buying decisions. Users can create goals, record contributions, monitor progress, and receive AI-generated recommendations based on their budget and priorities.",
@@ -54,7 +54,7 @@ const projects = [
       "I isolated each deployment issue individually, moved configuration values into environment variables, corrected the production API base URL, updated CORS settings, and repeatedly tested the complete authentication and goal-management workflow after deployment.",
 
     improvements: [
-      "Migrate the production database to PostgreSQL",
+      "Add savings trend visualizations and budget reporting",
       "Add automated frontend and backend test coverage",
       "Add password reset and account recovery",
       "Cache product-price results to reduce external requests",
@@ -67,9 +67,9 @@ const projects = [
     title: "PumpAI",
     type: "Full-Stack Capstone",
     year: "2026",
-    status: "Deployed",
+    status: "Case Study",
     image: pumpAIImage,
-    imageAlt: "PumpAI fitness tracking dashboard",
+    imageAlt: "PumpAI fitness tracking and AI feedback banner",
     summary:
       "A fitness coaching application combining food and workout tracking with personalized goals, progress history, and AI-generated feedback.",
     technologies: [
@@ -138,8 +138,8 @@ const projects = [
       "Vite",
       "Responsive CSS",
     ],
-    githubUrl: "",
-    liveUrl: "",
+    githubUrl: "https://github.com/JTClay1/tokyo-travel-app",
+    liveUrl: "https://tokyo-travel-app.vercel.app",
 
     overview:
       "Tokyo Travel is an interactive travel companion that brings together live weather, restaurant discovery, useful phrases, cultural information, and trip-planning tools in one responsive React application.",
