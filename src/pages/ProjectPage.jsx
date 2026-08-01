@@ -19,7 +19,7 @@ function ProjectPage() {
         />
 
         <div className="detail-shell container">
-          <RetroPanel title="Project Not Found">
+          <RetroPanel title="Project Not Found" titleAs="div">
             <div className="message-page">
               <p className="message-page__code">
                 404
@@ -44,6 +44,10 @@ function ProjectPage() {
       </div>
     );
   }
+
+  const statusClassName = project.status === "Deployed"
+    ? "project-card__status--deployed"
+    : "project-card__status--case-study";
 
   return (
     <div className="retro-page">
@@ -72,6 +76,7 @@ function ProjectPage() {
 
         <RetroPanel
           title={`${project.title} — Project Case Study`}
+          titleAs="div"
         >
           <article className="project-detail">
             <header className="project-detail__heading">
@@ -83,7 +88,7 @@ function ProjectPage() {
                 <h1>{project.title}</h1>
               </div>
 
-              <span className="project-card__status">
+              <span className={`project-card__status ${statusClassName}`}>
                 <span aria-hidden="true" />
                 {project.status}
               </span>
@@ -95,6 +100,7 @@ function ProjectPage() {
                   className="project-detail__image"
                   src={project.image}
                   alt={project.imageAlt}
+                  decoding="async"
                 />
               </div>
             )}
