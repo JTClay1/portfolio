@@ -1,4 +1,3 @@
-import heroImage from "../assets/hero.png";
 import RetroPanel from "./RetroPanel";
 
 const resumeUrl =
@@ -9,14 +8,6 @@ function ProfileSidebar() {
     <div className="profile-sidebar">
       <RetroPanel title="Profile">
         <div className="profile-card">
-          <div className="profile-card__image-frame">
-            <img
-              className="profile-card__image"
-              src={heroImage}
-              alt="Josh Clay"
-            />
-          </div>
-
           <h3>Josh Clay</h3>
 
           <p className="profile-card__handle">
