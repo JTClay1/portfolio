@@ -1,10 +1,42 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function ContactBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const closeButtonRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+
+  useEffect(() => {
+    if (!isOpen) {
+      return undefined;
+    }
+
+    closeButtonRef.current?.focus();
+
+    function handleKeyDown(event) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        window.requestAnimationFrame(() => {
+          toggleButtonRef.current?.focus();
+        });
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   function toggleContactPanel() {
     setIsOpen((currentValue) => !currentValue);
+  }
+
+  function closeContactPanel() {
+    setIsOpen(false);
+    window.requestAnimationFrame(() => {
+      toggleButtonRef.current?.focus();
+    });
   }
 
   return (
@@ -13,18 +45,20 @@ function ContactBar() {
         <section
           className="contact-chat__panel"
           id="contact-chat-panel"
-          aria-label="Contact information"
+          role="dialog"
+          aria-labelledby="contact-chat-title"
         >
           <div className="contact-chat__panel-header">
-            <div>
+            <div id="contact-chat-title">
               <span className="contact-chat__online-dot" aria-hidden="true" />
               Josh Clay
             </div>
 
             <button
+              ref={closeButtonRef}
               type="button"
               aria-label="Close contact panel"
-              onClick={() => setIsOpen(false)}
+              onClick={closeContactPanel}
             >
               ×
             </button>
@@ -73,6 +107,7 @@ function ContactBar() {
       )}
 
       <button
+        ref={toggleButtonRef}
         className="contact-chat__toggle"
         type="button"
         aria-expanded={isOpen}
