@@ -33,6 +33,26 @@ a:hover {
   color: var(--color-blue-dark);
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.65rem 0.85rem;
+  border: 2px solid #ffffff;
+  border-radius: var(--radius-small);
+  color: #ffffff;
+  background-color: var(--color-blue-dark);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  color: #ffffff;
+  transform: translateY(0);
+}
+
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid var(--color-yellow);
@@ -356,7 +376,7 @@ main {
   scroll-margin-top: 5rem;
 }
 
-.retro-panel__titlebar h2 {
+.retro-panel__title {
   margin: 0;
   font-size: 0.82rem;
 }
@@ -611,6 +631,15 @@ main {
   font-weight: 700;
 }
 
+.project-card__status--case-study {
+  color: #6a4b14;
+}
+
+.project-card__status--case-study span {
+  border-color: #966a19;
+  background-color: #efbd52;
+}
+
 .project-card__status span {
   width: 0.55rem;
   height: 0.55rem;
@@ -805,7 +834,7 @@ main {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  color: #596a80;
+  color: #43536a;
   font-family: "Courier New", monospace;
   font-size: 0.66rem;
 }
@@ -1199,4 +1228,21 @@ main {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid #c5ced9;
+}
+@media (max-width: 650px) {
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-section--wide {
+    grid-column: auto;
+  }
+
+  .case-study-list--columns {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail__footer-actions .retro-button {
+    width: 100%;
+  }
 }

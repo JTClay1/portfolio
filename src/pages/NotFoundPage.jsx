@@ -11,7 +11,7 @@ function NotFoundPage() {
       />
 
       <div className="detail-shell container">
-        <RetroPanel title="404 — Page Not Found">
+        <RetroPanel title="404 — Page Not Found" titleAs="div">
           <div className="message-page">
             <p className="message-page__code">
               404
