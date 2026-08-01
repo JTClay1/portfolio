@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
 function ProjectCard({ project, index }) {
+  const statusClassName = project.status === "Deployed"
+    ? "project-card__status--deployed"
+    : "project-card__status--case-study";
+
   return (
     <article className="project-card">
       <div className="project-card__image-frame">
@@ -8,6 +12,8 @@ function ProjectCard({ project, index }) {
           className={`project-card__image project-card__image--${project.slug}`}
           src={project.image}
           alt={project.imageAlt}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -17,7 +23,7 @@ function ProjectCard({ project, index }) {
             Project {String(index + 1).padStart(2, "0")}
           </span>
 
-          <span className="project-card__status">
+          <span className={`project-card__status ${statusClassName}`}>
             <span aria-hidden="true" />
             {project.status}
           </span>
